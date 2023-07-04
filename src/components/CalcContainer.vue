@@ -3,7 +3,7 @@
     <div class="monitor"></div>
     <div class="keys">
       <div class="thirdRow">
-        <div class="num">9</div>
+        <div class="num" @click="hello">9</div>
         <div class="num">8</div>
         <div class="num">7</div>
         <div class="num oprations divide"><svg xmlns="http://www.w3.org/2000/svg" height=".7em"
@@ -24,14 +24,22 @@
         <div class="num">2</div>
         <div class="num">1</div>
         <div class="num oprations">+</div>
-
+        
+      </div>
+      <div class="baseRow">
+        <div class="zero">0</div>
+        <div class="num oprations">-</div>
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-
+  methods: {
+    hello(){
+      console.log('salam')
+    }  
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -56,14 +64,37 @@ export default {
 
   .keys {
 
-    .thirdRow,.secondRow, .firstRow {
+    .thirdRow,.secondRow, .firstRow,.baseRow {
       display: flex;
       justify-content: space-around;
-
     }
-
+    .thirdRow{
+      margin-top: 10px;
+    }
     .secondRow,.firstRow {
-      margin-top: 50px;
+      margin-top: 30px;
+    }
+    .baseRow{
+      width: 97%;
+      height: 80px;
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 25px;
+      
+      .zero{
+        background-color: var(--light-gray);
+        width: 72%;
+        border-radius: 25px;
+        color: aliceblue;
+        font-size: 46px;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        cursor: pointer;
+      }
     }
 
     .num {
@@ -72,7 +103,7 @@ export default {
       flex-direction: column;
       justify-content: center;
       width: 80px;
-      height: 70px;
+      height: 80px;
       background-color: var(--light-gray);
       border-radius: 20px;
       cursor: pointer;
