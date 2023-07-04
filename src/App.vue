@@ -1,10 +1,10 @@
 <script setup>
-// import HelloWorld from './components/CalcContainer.vue'
+import CalcContainer from './components/CalcContainer.vue'
 </script>
 
 <template>
   <div class="container">
-    
+    <CalcContainer/>
   </div>
 </template>
 
@@ -13,5 +13,8 @@
     width: 100vw;
     height: 100vh;
     background-color: var(--light-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 </style>
